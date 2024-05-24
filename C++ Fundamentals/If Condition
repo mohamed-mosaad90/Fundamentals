@@ -1,0 +1,257 @@
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{	// 1. Write a program that takes an integer from user then print it
+	//int num;
+	//cin >>num;
+	//cout<<"num is ="<<num;
+	// 2. write a program that ask the user to insert 3 numbers then print the sum Input
+	//int num1, num2, num3,sum;
+	//cin >> num1 >> num2 >> num3;
+	// sum = num1 + num2 + num3;
+	//cout << "the sum is =" << sum;
+
+	//3. write a program that ask the user to insert 3 integers then print the average as
+	//decimal number Input
+	
+	//int x,y,z,sum;
+	//cin >>x>>y>>z;
+	//sum = (x + y + z);
+	//cout << "the sum is:" << (double)sum/3 << endl;
+
+
+	//4.Write a program to compute the perimeter and area of a rectangle. Your code
+	//should ask the user to insert the width and the height
+
+	//int l,w;
+	//cin >> l>> w;
+	//cout << "the perimeter is:" << 2 * l + 2 * w<<endl;
+	//cout << "the area is:" <<l * w<<endl;
+	
+	//5. Write a program to calculate the sum of the digits of a 3-digit number
+	//int num,sum, mud;
+	//cin >> num;
+	//sum = 0;
+	//
+	//	
+	//	sum += num % 10;
+	//	num /= 10; 
+
+	//	mud = num % 10;
+	//	sum += mud;
+	//	num /= 10;
+	//	mud = num % 10;
+	//	sum += mud;
+	//	num /= 10;
+	//cout << "out" << sum;
+
+	// 6. Write a program to convert a given integer (in seconds) to hours,
+	//minutes and seconds.
+	//
+	//int sec,hours,minute,second;
+	//cin >> sec;
+	//hours = sec / 3600; //<--  here divide on 3600 that is the sec of hours 
+	//cout << "hours "<<hours<<endl;
+	//minute = (sec % 3600)/60; // <-- mudles  3600 to get mudles of hour then divid it on 60 to get in minute. 
+	//cout << "minute " << minute<<endl;
+	//second = sec - hours * 3600 - minute * 60;//<--to get sec 
+	//cout << "sec " << second<<endl;
+	//cout << "time = " << hours <<":" << minute <<":" << second;
+	//
+
+	//7. Write a program that allows the user to insert an integer then print negative if it
+	//is a negative number otherwise print positive.
+
+
+	//int x ;
+	//cin >> x;
+
+	//if (x<0) {
+
+	//	cout << "negative";
+	//} 
+	//else
+	//{
+	//	cout << "positive";
+
+	//}
+	//8. Write a program to read any digit from 1 to 5, display it as a word
+	/*int x;
+	cin >> x;
+	if (x==1) {
+		cout << "one";
+	}
+	else if (x==2) {
+		cout << "two";
+
+	}
+	else if (x == 3) {
+		cout << "three";
+
+	}
+	else if (x == 4) {
+		cout << "four";
+
+	}
+	else if (x == 5) {
+		cout << "five";
+
+	}
+	else {
+		cout << "go to your mom";
+	}*/
+	// 9. Write a program that reads 5 numbers and sum of all odd values between
+	//them.
+	/*int num1, num2, num3, num4, num5, sum{};
+	cin >> num1>>num2>>num3>>num4>> num5;
+	if (num1 %2!=0) {
+		sum += num1;
+
+	}	if (num2 %2!=0) {
+		sum += num2;
+
+	}	if (num3 %2!=0) {
+		sum += num3;
+
+	}	if (num4 %2!=0) {
+		sum += num4;
+
+	}	if (num5 %2!=0) {
+		sum += num5;
+
+	}
+	cout <<"the sum of odd:" << sum;*/
+
+// 10.Write a program that reads a year then check if a year is a leap year or not: a
+//leap year is divisible by 400 or 4 only
+
+//int year;
+//cout << "enter year ya brooo\n";
+//cin >> year;
+//if (year %400==0|year%4==0)
+//{
+//	cout << "leab year";
+//
+//}
+//else { cout << "not leab year";
+//}
+
+
+	//11. take the birth year and check if he is above 18 or not
+	/*int x, year;
+	cout << "enter you birth year";
+	cin >> x;
+	 year = 2024-x;
+
+	if (year>18)
+	{
+		cout << "you greater than 18";
+	}
+	else {
+		cout << "you smallest than 18";
+
+	}*/
+// 12.A school has following rules for grading system:
+// 
+//int score;
+//cout << "enter your score ";
+//cin >> score;
+//
+//if (score < 25)
+//{
+//	cout << "your grade F";
+//}
+//else if (score >= 25 && score <= 45)
+//{
+//	cout << "your grade E";
+//
+//}
+//else if (score >= 45 && score <= 50)
+//{
+//	cout << "your grade D";
+//
+//}
+//else if (score >= 50 && score <= 60)
+//{
+//	cout << "your grade C";
+//
+//}
+//else if (score >= 60 && score <= 80)
+//{
+//	cout << "your grade B";
+//
+//}
+//else (score > 80); {
+//	cout << "your grade A";
+//
+//}
+
+//15.Write a program that take character from user then if it is vowel chars (a,e,I,o,u)
+//then print vowel otherwise print consonant
+
+//int charater;
+//cin >> charater;
+//if (charater=='a'|| charater=='e'|| charater=='i'|| charater=='o'|| charater=='u')
+//{
+//	cout << "vowel";
+//}
+//else {
+//	cout << "const";
+//}
+
+
+// 18.13.Write a program that take 3 integer from user then print the max element and
+//the min element.
+
+int x, y, z, max = INT_MAX, min = INT_MIN;
+cout << "enter 3 integer";
+cin >> x >> y >> z;
+//max
+if (x > y && x > z)
+{
+	max = x
+		;
+
+}
+else if (y > z && y > x) {
+	max = y;
+}
+else
+{
+	max = z;
+}
+//min
+if (x < y && x < z)
+{
+	min = x
+		;
+
+}
+else if (y < z && y < x) {
+	min = y;
+}
+else
+{
+	min = z;
+}
+cout << "max" << max<<endl;
+cout << "min" << min;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	/*int num, rev = 0;
+	cin >> num;
+	for (;num>0;) {
+		rev = rev * 10 + num % 10;
+		num /= 10;
+
+
+	}
+	cout << rev;*/
+
+}
+
+
