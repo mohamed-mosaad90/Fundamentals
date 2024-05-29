@@ -1,0 +1,144 @@
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{//1-Write a program that Print all 
+	//numbers from 1 to 10.
+//	for (int x = 1; x <= 10; x++) {
+//		cout << x<<endl;
+//}
+
+	//2-Write a program that taking a 
+	//number from user then print all
+		//numbers from 1 to this number.
+	//int num;
+	//cin >> num;
+	//for ( int i = 1;  i <= num; i++)
+	//{
+	//	cout << i << endl;
+	//}
+
+	//	Write a program that Print even numbers from 1 to 10.
+	//for (int x = 1; x <= 10; x++) {
+
+	//	if (x%2==0)
+	//	{
+	//		cout << x << endl;
+	//	}
+
+	//}
+	//anther solution --->
+	//for (int x = 0; x <= 10;x+=2) {
+	//	cout << x << endl;
+	//}
+	//Write a program that Print all 
+	//numbers that can be divided by 3 or 4 from 1 up to 10.
+	//for (int x = 1; x <= 10; x++)
+	//{
+	//	if (x % 3 == 0 || x % 4 == 0) {
+	//		cout << x << endl;
+	//	}
+	//}
+	// 4-Write a program that Print how many number that can be divided by 3 or 4 from 1 up to 10.
+
+	//int sum{}, count = 0;
+	//for (int x = 1; x <= 10; x++)
+	//{
+	//	if (x % 3 == 0 || x % 4 == 0) {
+	//		cout << x << endl;
+	//		sum+=x;
+	//		 count++;
+
+	//	}
+	//}
+	//cout << "sum is " << sum<<endl;
+	//cout << "count is " << count;
+	 //5- Write a program that Print all small letters.
+	//for (int chara = 'a'; chara <= 'z'; chara++) {
+
+	//	cout << chara<<" ";
+	//}
+	////anther one
+	//for (int x = 97; x <= 122; x++) {
+	//	cout << (short)x<<" ";
+	//}
+
+	//6- Write a program that print sum of numbers from 1 to 10.
+	/*int num,count{};
+	for ( num = 1; num <= 10; num++) {
+		count += num;
+	}
+
+	cout << count << " ";*/
+	//7-Write a program that Print factorial of an integer.
+	/*int count(1),num;
+	for ( num = 1; num <= 5;num++) {
+
+		count *= num;
+
+	}
+
+	cout << count;*/
+
+
+//8- Write a program that Take an  integer then print all divisor of  this number
+	//int x;
+	//cin >> x;
+	//for (int z = 1; z <= x; z++) {
+	//	if (x%z == 0) {
+	////here i take num that user insert and check if i looped untile reach to num that user enter then then check if i devid if = 0 then ok print it else don't print
+	//		cout << z << " ";
+	//	}
+	//}
+
+	///9-Write a program that Print the max of 10 integers
+	//int max = INT_MIN,z;
+	//for (int x = 0; x <= 5; x++) {
+	//	cin >> z;
+	//	if (z > max) {
+	//		max = z;
+	//	}
+	//}
+	//cout << max;
+	//10-Write a program that Check if the number is prime or not.
+
+	//int num, count{};
+	//cin >> num;
+	//for (int x = 1; x <= num;x++) {
+	//	if (num % x == 0)
+	//		count++;
+	//
+	//}
+	//if (count == 2) {
+	//	cout << "prime ";
+	//}
+	//else
+	//{
+	//	cout << "not prime";
+	//}
+
+//11-Write a program that Print the  digits of an integer
+//	int num, count{};
+//cin >> num;
+//for (; num > 0;) {
+//	count++;
+//	num /= 10;
+//}
+//cout << count << endl;
+
+//12-Write a program that Reverse an integer.
+
+	int num, rev{};
+cin >> num;
+for (;num>0;) {
+	rev = rev * 10 + num % 10;
+	num /= 10;
+
+}
+cout << "rev "<< rev;
+
+}
+
+
