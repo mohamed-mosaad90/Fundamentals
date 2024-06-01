@@ -139,6 +139,137 @@ for (;num>0;) {
 }
 cout << "rev "<< rev;
 
+	// 1. Write a program that print from 10 to 1
+	//for (int z = 10; z >= 1; z--) {
+	//	cout << z << endl;
+	//}
+	// 2. Write a program to read 10 numbers from the user then print the average.
+/*	int num, count(0), counter{}, sum{};
+	for (int x = 1; x <= 5; x++) {
+		cout << "enter num";
+		cin >> num;
+		count += num;
+		counter++;
+
+
+	}
+	sum = count / counter;
+	cout << sum;
+	*/	
+	// 3. Write a program i to display the multiplication table of a given integer
+
+	//int num;
+	//cin >> num;
+
+	//for (int x = 1; x <= 12; x++) {
+	//	cout << num << "*" << x << "=" << num * x << endl;
+	//}
+	// 4. Write a program that allows the user to insert two integers N and M and print the
+	//summation of all numbers between N and M.
+
+	//int n, m, count{};
+	//cin >> n >> m;
+	//for (n; n <= m; n++) {
+	//	count += n;
+	//}
+	//cout << count;
+
+	//5. Write a program that allows the user to insert infinite integers until insert negative
+	//number then print summation of all integers
+	
+	//int x, count{};
+	//
+	//while (true)
+	//{
+	//	
+	//	cout << "enter";
+	//	cin >> x;
+	//	if (x<0)
+	//	{
+	//		break;
+	//	}
+	//	count += x;
+	//}
+	//cout << count;
+
+	//6. Write a program that allows the user to insert infinite integers until insert negative
+	//number then print the max integer.
+
+	//	int x,max=INT_MIN;
+	//
+	//while (true)
+	//{
+	//	
+	//	cout << "enter";
+	//	cin >> x;
+	//	if (x<0)
+	//	{
+	//		break;
+	//	}
+	//	if (max<x) {
+	//		max = x;
+	//	}
+	//}
+	//cout << max;
+
+	//7. Enter Number and Count the number of steps required to make the Number
+	//equal to Zero.
+	//int num;
+	//cin >> num;
+	//if(num%2==0) {
+	//	num--;
+	//	cout << num;
+	//}
+	//else {
+	//	num /= 2;
+	//	cout << num;
+	//}
+
+	//8. Write a program to find the power of a number.
+
+	//int num , os, result=1;
+	//cin >> num>>os;
+	//for (int x = 1; x <= os;x++) {
+	//	result *= num;
+
+	//}
+	//cout << result;
+
+	//9-Write a program to take 10 numbers from the user and count the odd numbers  .
+
+	//int num, count{};
+
+	//for (int x = 1; x <= 10;x++) {
+	//	cin >> num;
+	//	if (num % 2 != 0) {
+	//		count++;
+
+	//	}
+
+	//}
+	//cout << count;
+
+//11- 11. Write a program to take 10 numbers from the user and find the second max.
+
+int num,max=INT_MIN,sec=INT_MIN;
+
+for (int x = 1; x <= 10;x++) {
+	cin >> num;
+	if (max<num) {
+		sec = max;
+		max = num;
+		
+	
+	}
+	if (num<max&&num>sec) {
+		sec = num;
+	}
+}
+cout <<"result" << sec<<endl;
+cout <<"result max" << max<<endl;
+
+
+
 }
 
 
