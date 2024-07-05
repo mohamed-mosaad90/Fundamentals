@@ -1,0 +1,418 @@
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main()
+{
+	  
+	/*int start,end, count{};
+	cin >> start>>end;
+	for (int i = start; i <= end;i++) {
+
+		count=0;
+	for (int x = 1; x <= i;x++) {
+		if (i%x==0) {
+			count++;
+		}
+
+
+	}
+	if (count==2) {
+		cout << "prime\n";
+	}
+	else {
+		cout << "not prime\n";
+	}
+}*/
+	//int h;
+	//cin >> h;
+	//for (int i = 1; i <= h;i++) {
+
+	//
+	//	for (int x = 1; x <=  h; x++) {
+	//		if (i==h||x==1||i==x) {
+
+	//		
+	//		cout << "*";
+	//		}
+	//		else {
+	//			cout << " ";
+	//		}
+	//	}
+	//	cout << endl;
+	//}
+
+							//5
+		//for (int i = 1; i<= h;++i) {
+		//		
+		//	for (int x = h; x >= i;x--) { 
+		//		cout << " ";
+		//	}for (int z = 1; z <= (2*i)-1; z++) {
+		//		cout << "*";
+		//	}cout << endl;
+		//}	for (int i = h; i>=1;i--) {
+		//		
+		//	for (int x = h; x >= i;x--) { 
+		//		cout << " ";
+		//	}for (int z = 1; z <= (2*i)-1; z++) {
+		//		cout << "*";
+		//	}cout << endl;
+		//}
+
+	
+	//int arr[5], count = 0,w;
+	////for (int i = 0; i < 5;i++) {
+	////	cin >> arr[i];
+	////}
+	/////////////////////////////////////////////////////////
+	//cin >> w;
+	//for (int z = 0; z < 5;z++) {
+	//	count = 0;
+	//	for (int x = 1; x <=w;x++) {
+	//		if (z % x == 0) {
+	//			count++;
+	//		}
+
+	//	}
+	//	if (count == 2) {
+	//		cout <<z << "prime\n";
+	//	}
+	//	else {
+	//		cout << z << "not prime\n";
+	//	}
+
+
+	//}
+	// 5-Write a program that Insert value at specific index in array then shift other numbers.
+	/*int arr[5], num, ind, value;
+
+	for (int x = 0; x < 4; x++) {
+		cin >> arr[x];
+	}
+	cout << "enter index\n";
+	cin >> ind;
+	cout << "enter value\n";
+	cin >> value;
+	cout << "\nbefor\n";
+	for (int x = 0; x < 5; x++) {
+		cout << arr[x]<<endl;
+	}
+
+	if (ind==4) {
+		arr[ind] = value;
+
+	}
+	else {
+		for (int x = 4; x >= ind; x--) {
+			arr[x + 1] = arr[x];
+		}
+	}
+
+	cout << "\nafter\n";
+	for (int x = 0; x <= 4; x++) {
+		cout << arr[x]<<endl;
+	}*/
+
+//Write a program that Reverse an array inside memory.
+
+//int arr[5], rev[5];
+//for (int x = 0; x < 5; x++) {
+//
+//	cin >> arr[x];
+//}
+//cout << "before\n";
+//for (int x = 0; x < 5; x++) {
+//
+//	cout << arr[x];
+//}
+//
+//for (int x = 4; x >= 0;x--) {
+//
+//	rev[4-x] = arr[x];
+//}
+//
+//for (int x = 0; x <= 5;x++) {
+//	arr[x] = rev[x];
+//}
+//cout << "\nafter\n";
+//for (int x = 0; x < 5; x++) {
+//
+//	cout << arr[x];
+//}
+//int h;
+//cin >>h;
+//for (int x = 1; x <= h; x++) {
+//	for (int z = x; z <= h; z++) {
+//		cout << " ";
+//
+//	}
+//
+//	for (int z = 1; z <= ((2*x)-1); z++) {
+//		cout << "*";
+//
+//	}
+//	cout << endl;
+//
+//
+//	
+//}
+//for (int x = 1; x <= h; x++) {
+//	for (int z = 1; z <= x; z++) {
+//		cout << " ";
+//
+//	}
+//
+//	for (int z = h; z >=x; z--) {
+//		cout << "* ";
+//
+//	}
+//	cout << endl;
+//
+//
+//	
+//}
+////////////////////////////////////////////////////////////////////////////
+
+
+//1. Write a program to print right triangle number pattern series using loop.
+//Example:
+
+//int h;
+//cin >> h;
+//
+//for (int x = 1; x <= h;x++) {
+//	for (int z = 1; z <= x;z++) {
+//		cout << x;
+//	}
+//	cout << endl;
+//}
+//2. Write a program to print hollow right triangle star pattern series using loop.
+//Example:
+
+//int h;
+//cin >> h;
+//for (int x = 1; x <= h;x++) {
+//	for (int z = 1; z <= x;z++) {
+//		if (z==1||x==h||z==x) {
+//			cout << "*";
+//		}else{
+//				cout << " ";
+//		}
+//	}
+//	cout << endl;
+//
+//}
+
+//3. Write a program to print inverted right triangle star pattern series using loop.
+//Example:
+
+//int h;
+//cin >> h;
+//for (int x = h; x >= 1; x--) {
+//	for (int z = 1; z <= x; z++) {
+//			cout << "*";
+//	
+//	}
+//	cout << endl;
+//
+//}
+
+//4. Write a program to take a number and find a list of non - prime numbers from 1 to
+//this number.
+//
+//int num, count = 0;
+//cin >> num;
+//for (int z = 1; z <= num;z++) {
+//	count = 0;
+//
+//for (int x = 1; x <= z;x++) {
+//	if (z%x==0) {
+//		count++;
+//	}
+//}
+//if (count != 2) {
+//	cout << z << "not prime\n";
+//}
+// 
+//}
+
+
+//5. Write a program in C++ to input any number and print it in words.
+//int x ,rev=0;
+//cin >> x;
+//for (; x > 0;) {
+//	rev = (rev * 10) + x % 10;
+//	x /= 10;
+//}
+//
+////l==> 9              l=90/10 =9
+//for (int l = rev; l > 0;l/=10) {
+//
+//
+//	// ==> 8
+//switch (l%10)
+//{
+//case 0:cout << "zero";
+//	break;
+//case 1:cout << "one";
+//	break;
+//case 2:cout << "two";
+//	break;
+//case 3:cout << "three";
+//	break;
+//case 4:cout << "four";
+//	break;
+//case 5:cout << "five";
+//	break;
+//case 6:cout << "six";
+//	break;
+//case 7:cout << "seven";
+//	break;
+//case 8:cout << "eight";
+//	break;
+//case 9:cout << "nine";
+//	break;
+//default:
+//	break;
+//}
+//cout << " ";
+//// ==> 8 3 0 9
+//}
+//
+
+
+
+
+
+
+
+//6. Write a program to input elements in an array from the user and count even and
+//odd elements in the array.
+
+
+//int arr[10], countEven=0, countOdd=0;
+//for (int i = 0; i < 10;i++) {
+//	cin >> arr[i];
+//}
+
+//for (int i = 0; i <= 10;i++) {
+//if(arr[i] % 2 == 0) {
+//	cout << i << "even\n";
+//	countEven++;
+//}
+//else {
+//	cout << i << "odd\n";
+//	countOdd++;
+//}                                             
+//}
+//
+//cout << "countEven:" << countEven;
+//cout << "\ncountOdd:" << countOdd;
+
+
+
+//7. Write a program to input elements in an array and search whether an element 
+//exists in the array or not.
+
+//int arr[10];
+//
+//cout << "enter Numbers";
+//for (int i = 0; i < 10;i++) {
+//	cin >> arr[i];
+//}
+//
+//int flag = false, num;
+//cout << "enter Number";
+//
+//cin >> num;
+//
+//
+//for (int i = 0; i < 10; i++) {
+//	if (arr[i] == num) {
+//		flag = true;
+//	}
+//}
+//if (flag == true) {
+//	cout << num << "is Exist";
+//}
+//else {
+//	cout << "Sorry not exist";
+//}
+
+//                                                
+//8. Write a C++ program to count the number of occurrences of a given number in an array of integers
+//int arr[10],num, count=0;
+//for (int x = 0; x < 10;x++) {
+//	cin >> arr[x];
+//}
+//
+//cout << "enter num\n";
+//cin >> num;
+//
+//for (int x = 0; x < 10; x++) {
+//	if (arr[x]==num) {
+//		count++;
+//	}
+//}
+//cout << num<<":" << count;
+//9. Write a program to input elements in an array and copy all elements of the first 
+//array into the second array.
+
+//	int arr[10]={1,2,3,4,5,6,7,8,9,10}, arrCopy[10];
+//for (int i = 0; i < 10;i++) {
+//	arrCopy[i] =arr[i];
+//
+//}
+//for (int i = 0; i < 10;i++) {
+//	cout <<"\norignal=" << arrCopy[i];
+//	cout <<"\ncopy=" << arr[i];
+//}
+
+//10.Write a program to input elements in array then print all unique elements in array.
+//int arr[10],count=0;
+//for (int x = 0; x < 10;x++) {
+//	cin >> arr[x];
+//}
+//for (int i = 0; i < 10;i++) {
+//	count = 0;
+//	for (int j = 0; j < 10; j++) {
+//		if (arr[i]==arr[j]) {
+//			count++;
+//		}
+//
+//	}
+//	if (count==1) {
+//		cout << arr[i] << "is Unique\n";
+//	}
+//}
+
+ 
+//11.Write a program to input elements in an array and find two numbers whose sum 
+//equals the last element in the array
+
+int arr[10], x;
+
+for (int x = 0; x < 10;x++) {
+	cin >> arr[x];
+}
+x = arr[9];
+for (int i = 0; i < 10;i++) {
+
+	for (int j = i+1; j < 10;j++) {
+		if (arr[i] +arr[j]==x) {
+			cout << arr[i] << "+" << arr[j] << "= " << x<<endl;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+}
