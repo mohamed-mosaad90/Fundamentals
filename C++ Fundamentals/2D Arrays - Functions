@@ -1,0 +1,217 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+//
+//int sum(int x, int y) {
+//
+//	return x + y;
+//
+//}
+//int sub(int x, int y) {
+//
+//	return x - y;
+//
+//}
+//int mul(int x, int y) {
+//
+//	return x * y;
+//
+//}
+//int divide(int x, int y) {
+//
+//	return x / y;
+//
+//}
+//void calc(int x, int op, int y) {
+//	switch (op) {
+//	case '+':cout << x << "+" << y << "=";
+//		cout << sum(x, y);
+//		break;
+//	case '-':cout << x << "-" << y << "=" << sub(x, y);
+//		break;
+//	case '*':cout << x << "*" << y << "=" << mul(x, y);
+//		break;
+//	case '/':cout << x << "/" << y << "=" << divide(x, y);
+//		break;
+//
+//	}
+//
+//}
+	//4. Create a void function, take an integer then print it then call this method in main.
+
+//void num(int a) {
+//	cout << a;
+//}
+
+//5. Create a function, take three integers then return the average as float value then
+//call this method in main.
+
+//int average(int a,int b,int c) {
+//	int average = (a + b + c) / 3;
+//	return average;
+//}
+
+//6. Create a function, take an integer then return true if this number is prime
+//otherwise return false
+//int IsPrime(int a) {
+//	int count = 0;
+//	for (int i = 1; i <= a; i++) {
+//		if (a % i == 0) {
+//			count++;
+//
+//		}
+//	}
+//	if (count == 2) {
+//		return true;
+//
+//	}
+//	else {
+//		return false;
+//	}
+//}
+
+///7. Write a function to find a cube of a given number.
+
+//int power(int a) {
+//	
+//	int c = pow(a,3);
+//	return   c;
+//
+//}
+///8. Write a program to input radius of circle from user and find diameter,
+//circumference and area of the given circle using function.
+
+//double circle(int a) {
+//
+//	 double PI = 3.14159;
+//
+//	 int diameter = 2 * a;
+//	int area = PI * pow(a, 2);
+//	int circumference = 2 * PI * a;
+//	cout << "diameter " << diameter << "\ncircumference " << circumference << "\narea " << area;
+//	return diameter;
+//}
+//9. create void function to take number and print all divisors of number
+
+//void divisors(int a) {
+//	int flag=false;
+//	for (int i = 1; i <= a;i++) {
+//		if (a % i == 0) {
+//			cout << i<<endl;
+//		}
+//	}
+//}
+//10.create function to take number and return true if this number can divide by 3 and 4
+int  divisors(int a) {
+	
+	if (a%3==0&&a%4==0) {
+		return true;
+}
+
+}
+int main() {
+	int a;
+	cin >> a;
+	if (divisors(a) ) {
+		cout << "a7a";
+	}
+
+	//divisors(a);
+
+	//cout<< circle(a);
+	//cout<<power(a);
+
+	//if (IsPrime(7) ){
+	//	cout<<"prime";
+	//}
+	//else {
+	//	cout << "not prime";
+
+	//}
+	//cout<<average(5, 6, 7);
+	//num(5);
+	//int a,  c;
+	//char b;
+	//cin >> a >> b >> c;
+	//calc(a, b, c);
+
+	//1. Write a program to read elements in a matrix and find the sum of main diagonal
+	//(major diagonal) elements of the matrix.
+//	int arr[3][3],sum=0;
+//	for (int i = 0; i < 3;i++) {
+////                   
+//		for (int j = 0; j < 3;j++) {
+//			cin >> arr[i][j];
+//			if (i==j) {
+//				sum+= arr[i][j];
+//			}
+//		}
+//	}
+//	cout << sum;
+//
+	//2. Write a program to read elements in two matrices and add elements of both
+	//	matrices.
+
+	/*int arr[3][3], arr2[3][3], arr3[3][3], sum = 0;
+	for (int i = 0; i < 3; i++) {
+
+		for (int j = 0; j < 3; j++) {
+			cin >> arr[i][j];
+		}
+	}
+	cout << "arr2";
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {	
+			cin >> arr2[i][j];
+			
+				arr3[i][j] = arr[i][j] + arr2[i][j];
+			
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+
+		for (int j = 0; j < 3; j++) {
+			cout << arr3[i][j];
+		}
+		cout<<" " << endl;
+	}*/
+
+
+
+	//3. Write a program to read elements in a matrix and find the sum of elements of
+	//	each row of the matrix.
+
+	//int arr[3][3], count1 = 0, count2 = 0, count3 = 0;
+	//for (int i = 0; i < 3; i++) {
+
+	//	for (int j = 0; j < 3; j++) {
+	//		cin >> arr[i][j];
+	//		if (i==0) {
+	//			count1+= arr[i][j];
+
+	//		}
+	//		else if (i==1) {
+	//			count2 += arr[i][j];
+	//		}
+	//		else if (i==2) {
+	//			count3 += arr[i][j];
+
+	//		}
+	//	}
+	//	
+	//} 
+	//cout << "row 1" << count1;
+	//cout << "row 2" << count2;
+	//cout << "row 3" << count3;
+
+
+
+
+
+
+}
+
