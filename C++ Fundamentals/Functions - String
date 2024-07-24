@@ -1,0 +1,283 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+//int fib(int n) {
+//
+//	if (n==1||n==2) {
+//		return 1;
+//	
+//	}
+//	else {
+//		return (fib(n - 1) + fib(n - 2));
+//	}
+//}
+
+	//Create program to Get most repeated char in the word
+//int num(string word,char w) {
+//	int count = 0;
+//	for (int i = 0; i < word.length();i++) {
+//		if (word[i]==w) {
+//			count++;
+//		}
+//
+//	}
+//	return count;
+//	 }
+//
+//				char most(string word) {
+//					int max = 0;
+//					char one=word[0] ;
+//					for (int i = 0; i < word.length(); i++) {
+//						int number = num(word, word[i]);
+//						if (number > max) {
+//							max = number;
+//							one = word[i];
+//						}
+//					}
+//
+//
+//					cout << one << "\nis the:  " ;
+//					return max;
+//				}
+//
+//
+//
+//
+//1. Write a program to print all elements of an array using the function
+//void print(int arr[10]) {
+//	for (int i = 0; i < 10; i++) {
+//	 cout << arr[i];
+//
+//	}
+//
+//}
+
+//2. Write a program to find the sum of array elements using the function.
+
+
+//int print(int arr[10]) {
+//	int	sum = 0;
+//	for (int i = 0; i < 10; i++) {
+//		sum += arr[i];
+//	}
+//	return sum;
+//}
+
+//3. Write a function takes a matrix then return the sum of main diagonal
+//(major diagonal) elements of the matrix.
+
+//int sumMatrix(int arr[][3], int size) {
+//	int sum=0;
+//	for (int i = 0; i < size; i++) {
+//		for (int j = 0; j < 3; j++) {
+//			if (i == j) {
+//				sum += arr[i][j];
+//			}
+//
+//		}
+//
+//	}
+//	return sum;
+//}
+
+//4. Write a function takes string then return the most repeated char.
+//int counter(string word,char w) {
+//
+//	int count = 0;
+//	for (int i = 0; i < word.length();i++) {
+//		if (word[i] == w) {
+//			count++;
+//		}
+//
+//	}
+//	return count;
+//
+//}
+//char mostReply(string words) {
+//	int max = 0;
+//	char  x = words[0];
+//	for (int i = 0; i < words.length(); i++) {
+//		int count = counter(words, words[i]);
+//		if (count>max) {
+//			max = count;
+//			x = words[i];
+//		}
+//	}
+//	if (max==1) {
+//		cout << "no char most than 1";
+//		return max;
+//	}
+//	else {
+//		cout << " most char is: "<<x<<"%%";
+//		return max;
+//	}
+//
+//}
+
+//5. Write a function receive string and convert it to lowercase
+// note :====> any captal number if you add 32 became small.
+//void lowercase(string s) {
+//	
+//	for (int i = 0;i<=s.length();i++) {
+//		if (s[i] >= 'A' && s[i] <= 'Z') {
+//			s[i] += 32;
+//		}
+//	}
+//
+//	cout << s;
+//
+//}
+//6. Write a function to check all chars are digits or not
+  
+//*note*way 1
+//char check(string s) {
+//
+//	for (int i = 0;i<=s.length();i++){
+//		if (isdigit(s[i])) {
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//
+//	}
+//
+//}
+//way 2==>
+//bool check(string s) {
+//	bool flag = false;
+//	for (int i = 0; i < s.length(); i++) {
+//		if (s[i] >= '0' && s[i] <= '9') {
+//			flag = true;
+//			break;
+//		}
+//	}
+//	return flag;
+//
+//
+//}
+
+//7. Function to reverse int using recursion
+//void reverse(int r) {
+//
+//	if (r == 0) {
+//		return;
+//	}
+//	else {
+//		cout << r % 10;
+//		reverse(r / 10);
+//	}
+//}
+ //8. Function to return the max digit in int
+int max(int m) {
+	int max = INT_MIN,col=0;
+	
+	for (; m > 0;) {
+		col = m % 10;
+	
+	if (col>max) {
+		max = col;
+	
+		m /= 10;
+	}
+	}
+	return max;
+}
+int main() {
+	int  x;
+	
+	cin >> x; 
+
+	cout<< max(x);
+	/*if (check(x)) {
+		cout<< "a7a";
+	}
+	else {
+		cout << " not a7a";
+
+	}*/
+	//string s;
+	//cin >> s;
+	//if (check(s)) {
+	//	cout << "true";
+	//}
+	//else {
+	//	cout << "flase";
+	//}
+
+
+
+	/*string word;
+	cin >> word;
+	cout << mostReply(word);*/
+
+	
+
+	//int arr[3][3];
+	//for (int i = 0; i < 3;i++) {
+	//	for (int j = 0; j < 3; j++) {
+	//		cin >> arr[i][j];
+	//	}
+
+	//}
+	//cout << sumMatrix(arr, 3);
+	//string wor;
+	//
+	//cin >> wor;
+	//cout<<most(wor);
+	//cout<<fib(8);
+
+	//Create program to take a string then remove all vowels from it.
+	//for (int i = 0; i <= x.size(); i++) {
+	//	if (x[i] == 'a' || x[i] == 'o' || x[i] == 'e') {
+	//		x.erase(i, 1);
+	//		i--;
+	//	}
+	//}
+
+	// Create program to Search for  char in word.
+	//string x;
+	//char y;
+	//cin >> x;
+	//cout << "enter charter";
+	//cin >> y;
+	//bool flag = false;
+	//for (int i = 0; i <= x.size(); i++) {
+	//	if (x[i]==y) {
+	//		flag = true;
+	//	}
+
+	//}
+	//if (flag) {
+	//	cout << y<< " is exist";
+
+	//}
+	
+
+
+//Create program to Count number of spaces and lines in text
+
+	//string x;
+	//char y;
+	//cin >> x;
+	//cout << "enter charter";
+	//cin >> y;
+	//bool flag = false;
+	//int count = 0;
+	//for (int i = 0; i <= x.length(); i++) {
+	//	if (x.find(" ")) {
+	//		count++;
+	//	}
+
+	//}
+
+	//	cout << " is exist" << count ;
+
+
+
+
+
+}
