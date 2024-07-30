@@ -1,0 +1,241 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+
+const int librarySize = 100;
+//index==> 5
+int booksSize = 6;
+int ids[librarySize] = {};
+string titles[librarySize] = { "alaohgany","zam","alahly","egypt","banha" },
+authers[librarySize]{ "mohamed","aly","ibrahem","magdy","mostafa" ,"yousef" };
+bool status[librarySize] = { true,true,false,true,true,false };
+
+void confirmation() {
+	cout << "\nDo you want to comfirm?\n";
+	cout << "\n1- yes\n";
+	cout << "\n2- no\n";
+	cout << "\nenter\n";
+}
+void displayBook(int id, string title, string auther, bool status) {
+	string statusBooks = status == true ? "available" : "not available  ";
+	cout << "book info\n";
+	cout << "======================\n";
+	cout << "ID :" << id << endl;
+	cout << "title :" << title << endl;
+	cout << "authers :" << auther << endl;
+	cout << "status :" << statusBooks << endl;
+	cout << "======================\n";
+}
+void displayBooks() {
+	cout << "***all books***\n";
+	for (int i = 0; i < booksSize; i++) {
+		displayBook(ids[i], titles[i], authers[i], status[i]);
+	}
+}
+int search(int id) {
+	for (int i = 0; i < booksSize; i++) {
+
+		if (id == ids[i]) {
+			return i;
+		}
+	}
+
+	return -1;
+
+}
+void addNewBook() {
+	if (librarySize == booksSize) {
+		cout << "you can't add new books to system\n";
+	}
+	else {
+		string title, auther;
+		bool bookStatus;
+		cout << "please enter new book title";
+		cin >> title;
+		cout << "please enter new book auther ";
+		cin >> auther;
+		cout << "please enter new book status";
+		cin >> bookStatus;
+
+		//index ==>  5 ||num ==>6
+		titles[booksSize] = title;
+		authers[booksSize] = auther;
+		status[booksSize] = bookStatus;
+		//id==>6       //now booksSize increase 1 became 7 also                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   7
+		ids[booksSize] = booksSize + 1;
+		booksSize++;
+		cout << "book add successfully";
+	}
+
+}
+void borrowBook() {
+	int id, choice;
+	cout << "enter id of book you want";
+	cin >> id;
+	int searchId = search(id);
+	if (searchId == -1) {
+		cout << "book not founded\n";
+	}
+	else {
+		if (status[searchId] == true) {
+			displayBook(ids[searchId], titles[searchId], authers[searchId], status[searchId]);
+
+			confirmation();
+			cin >> choice;
+			if (choice == 1) {
+				status[searchId] = false;
+				cout << "succussfully borrow";
+			}
+
+
+		}
+		else {
+			cout << "\nsorry not available\n";
+		}
+
+	}
+
+}
+void returnBook() {
+
+	int id, choice;
+	cout << "enter id of book you want";
+	cin >> id;
+	int searchId = search(id);
+	if (searchId == -1) {
+		cout << "book not founded\n";
+	}
+	else {
+		if (status[searchId] == false) {
+			displayBook(ids[searchId], titles[searchId], authers[searchId], status[searchId]);
+
+			confirmation();
+			cin >> choice;
+			if (choice == 1) {
+				status[searchId] = true;
+				cout << "succussfully return";
+			}
+
+
+		}
+		else {
+			cout << "\nbook cannot return\n";
+		}
+
+	}
+
+
+}
+void updateBook() {
+	int id, choice;
+	string newTitle, newAuther;
+	cout << "enter id of book you want";
+	cin >> id;
+	int searchId = search(id);
+	if (searchId == -1) {
+		cout << "book not founded\n";
+	}
+	else {
+		displayBook(ids[searchId], titles[searchId], authers[searchId], status[searchId]);
+		confirmation();
+		cout << "enter your choice";
+		cin >> choice;
+		if (choice == 1) {
+			cout << "enter new title";
+			cin >> newTitle;
+			cout << "enter new auther";
+			cin >> newAuther;
+
+			titles[searchId] = newTitle;
+			authers[searchId] = newAuther;
+			cout << "succussfully update";
+		}
+	}
+}
+
+void deleteBook() {
+	int id, searchId, choice;
+	cout << "enter id of book you want";
+	cin >> id;
+	searchId = search(id);
+	if (searchId == -1) {
+		cout << "not founded";
+	}
+	else {
+		displayBook(ids[searchId], titles[searchId], authers[searchId], status[searchId]);
+		confirmation();
+		cout << "enter your choice";
+		cin >> choice;
+		if (choice == 1) {
+	
+			for (int i = searchId; i < booksSize-1;i++) {
+				titles[i] = titles[i + 1];
+				authers[i] = authers[i + 1];
+				status[i] = status[i + 1];
+			}  
+			ids[booksSize - 1] = 0;
+			booksSize--;
+			cout << "succussfully deleted";
+		}
+	}
+}
+void displayChoice() {
+	cout << "\n=======================\n";
+	cout << "1- Dislay all books\n";
+	cout << "2- Add books\n";
+	cout << "3- borrow books\n";
+	cout << "4- return book\n";
+	cout << "5- update book\n";
+	cout << "6- delete book\n";
+	cout << "7- Exit \n";
+	cout << "\n=======================\n";
+
+}
+
+int main() {
+	for (int i = 0; i < booksSize; i++)
+	{
+		ids[i] = i + 1;
+
+	}
+
+	bool flag = true;
+
+	while (flag)
+	{
+		displayChoice();
+
+		int choice;
+		cin >> choice;
+		switch (choice) {
+		case 1:
+			displayBooks();
+			break;
+		case  2:
+			addNewBook();
+			break;
+		case  3:
+			borrowBook();
+			break;
+		case  4:
+			returnBook();
+			break;
+		case  5:
+			updateBook();
+			break;
+		case  6:
+			deleteBook();
+			break;
+
+		case 7:
+			flag = false;
+			cout << "\n Good Bye";
+		}
+	}
+
+	return 0;
+
+}
