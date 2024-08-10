@@ -1,0 +1,102 @@
+//1-
+class Circle {
+private:
+	double radius;
+	string color;
+public:
+	Circle() {
+		radius = 1.0;
+
+	}
+	Circle(double r) {
+		radius = r;
+
+	}
+	Circle(double r, string c) {
+		radius = r;
+		color = c;
+	}
+	double getRadius() {
+		return radius;
+	}
+	string getColor() {
+		return color;
+	}
+	void setRadius(double r) {
+		radius = r;
+	}
+	void setColor(string c) {
+		color = c;
+	}
+
+	double getArea() {
+		return 3.14 * radius * radius;
+	}
+
+};
+
+int main()
+{
+
+	Circle c1(5, "red");
+	cout<<c1.getArea();
+
+}
+
+// 2-
+#include <iostream>
+#include <vector>
+#include <iomanip>
+
+#include <string>
+using namespace std;
+#pragma once
+
+
+
+class Employee {
+private:
+	int id;
+	int salary;
+	string firstname;
+	string lastname;
+public:
+	Employee(int i, int s, string f, string l) {
+		id = i;
+		salary = s;
+		firstname = f;
+		lastname = l;
+	}
+	int getID() {
+		return id;
+	}
+	int getSalary() {
+		return salary;
+	}
+	string lastName() {
+		return lastname;
+	}
+	string firstName() {
+		return firstname;
+	}
+	void setSalary(int s) {
+		salary = s;
+	}
+	int getAnnualSalary() {
+		return salary
+			* 12;
+	}
+	int raiseSalary(int p) {
+
+		int percent = (salary + (salary * p * 0.01));
+		return percent;
+}
+
+};
+int main()
+{
+	Employee e1(22222, 5000, "mo", "allam");
+	cout <<"%"<< e1.raiseSalary(5);
+}
+
+
