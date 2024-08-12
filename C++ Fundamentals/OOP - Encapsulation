@@ -98,5 +98,69 @@ int main()
 	Employee e1(22222, 5000, "mo", "allam");
 	cout <<"%"<< e1.raiseSalary(5);
 }
+//3- 
+class Account {
+private:
+	string id;
+	string name;
+	int balance;
 
+public:
+	Account() {
+		balance = 0;
+
+	}
+	Account(string i,string n) {
+		id = i;
+		name = n;
+	}
+	Account(string i,string n,int b) {
+		id = i;
+		name = n;
+		balance = b;
+	}
+
+	string getID() {
+		return id;
+	}
+	string getName() {
+		return name;
+	}
+	int getBalance() {
+		return balance;
+	}
+	int credit(int a) {
+		return balance += a;
+	}
+	int debit(int a) {
+		if (a <= balance) {
+			return balance -= a;
+
+		}
+	}
+
+	/// <summary>
+	/// ==> &another here we passed by reference, not by value(take a picture of the value when I change value just picture changed ), cause  I want the address or reference of OBJ another in memory to change the value, not the value of a copy or picture 
+	/// </summary>
+	int transferTo(Account &another, int a) {
+		if (a <= balance) {
+			balance -= a;
+
+			another.credit(a);
+			return balance;
+		}
+	}
+
+
+};
+int main()
+{
+	Account a1("222", "mo", 1000),a2;
+
+	a1.transferTo(a2, 500);
+	cout << "a1 =" << a1.getBalance()<<endl;
+	cout << "a2 =" << a2.getBalance();
+}
+
+//4- 
 
