@@ -164,3 +164,88 @@ int main()
 
 //4- 
 
+class Time
+{
+private:
+
+	int hour;
+	int minute;
+	int second;
+public:
+	Time() {
+		hour = 0;
+		minute = 0;
+		second = 0;
+	}	Time(int h, int m, int s) {
+		hour = h;
+		minute = m;
+		second = s;
+	}
+	int getHour() {
+		return hour;
+	}
+	int getMinute() {
+		return minute;
+	}
+	int getSecond() {
+		return second;
+	}
+	void setHour(int h) {
+		hour = h;
+	}
+	void setMinute(int m) {
+		minute = m;
+	}
+	void setSecond(int s) {
+		second = s;
+	}
+	void setTime(int h, int m, int s) {
+		hour = h;
+		minute = m;
+		second = s;
+	}
+	Time nextSecond() {
+		Time t=Time(hour, minute, second);
+		second++;
+		if (second>=60) {
+			second = 0;
+			minute++;
+		}
+		if (minute>=60) {
+			minute = 0;
+			hour++;
+		}
+		if (hour>=24) {
+			hour = 0;
+
+
+		}
+		return t;
+	}
+	Time preSecond() {
+		Time t = Time(hour, minute, second);
+		second--;
+		if (second <= 0) {
+			second = 59;
+			minute--;
+		}
+		if (minute <= 0) {
+			hour = 59;
+			hour--;
+
+		}
+		if (hour = 0) {
+			hour == 23;
+		}
+
+	}
+};
+int main() {
+
+	Time t(23, 59, 59);
+	t.nextSecond();
+	cout << t.getHour() << endl;
+	cout << t.getMinute() << endl;
+	cout << t.getSecond() << endl;
+}
+
