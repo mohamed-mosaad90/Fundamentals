@@ -1,0 +1,157 @@
+//1- 
+
+class Circle {
+protected:
+	double radius ;
+	string color ;
+public:
+	Circle() {
+		radius = 1.0;
+		color = "red";
+	}
+	Circle(double r) {
+		radius = r;
+	
+	}
+	Circle(double r,string c) {
+		radius = r;
+		color = c;
+	}
+	double getRadius() {
+		return radius;
+	}
+	string getColor() {
+		return color;
+	}
+	void setColor(string c) {
+		color = c;
+	}
+	double getArea() {
+		return radius;
+	}
+
+};
+
+class Cylander :public Circle {
+private:
+	double height;
+public:
+	Cylander (){
+
+	}
+	Cylander (double r):Circle(r){
+
+	}
+	Cylander (double r,double h):Circle(r){
+		height = h;
+	}
+	Cylander (double r,double h,string c):Circle(r,c){
+		height = h;
+	}
+	double getHeight() {
+		return height;
+	}
+	void setHeight(double h) {
+		 height=h;
+	}
+	double getVolume() {
+		return 3.14 * (radius *2) * height;
+	}
+
+};
+int main() {
+	Cylander c1(5,10,"mo");
+	cout << c1.getVolume();
+
+}
+
+//2-
+
+class MyComplex {
+private:
+	double real;
+	double img;
+public:
+	MyComplex() {
+		real=0;
+		 img=0;
+	}
+	MyComplex(double r,double i) {
+		real=r;
+		 img=i;
+	}
+	double getReal() {
+		return real;
+	}
+	double getImg() {
+		return img;
+	}
+	//setter
+	void setImg(double i) {
+		img = i;
+	}
+	void setReal(double r) {
+		real = r;
+	}
+	void setValue(double r, double i) {
+		real = r;
+		img = i;
+	}
+	bool isReal() {
+		if (real ==0) {
+			return true;
+		}
+		else
+			return false;
+
+	}
+	bool isImg() {
+		if (img ==0) {
+			return true;
+		}
+		else
+			return false;
+
+	}
+	bool equals(double real, double imag) {
+		if (real == real && img == imag)
+			return true;
+		else
+			return false;
+	}
+	bool equals(MyComplex another) {
+		if ((real == another.real) && (img = another.img))
+			return true;
+		else
+			return false;
+	}
+	double magnitude() {
+		return sqrt(real * real + img * img);
+	}
+	MyComplex addInto(MyComplex right) {
+		real += right.real;
+		img += right.img;
+		return (*this);
+	}
+	MyComplex addNew(MyComplex right) {
+		MyComplex newComplex(real + right.real, img + right.img);
+		return newComplex;
+	}
+
+
+
+};
+int main() {
+	MyComplex c1(3.1, 7.2);
+	MyComplex c2(4, 5);
+
+	cout << "c1 = (" << c1.getReal() << ", " << c1.getImg() << ")" << endl;
+	cout << "c2 = (" << c2.getReal() << ", " << c2.getImg() << ")" << endl;
+
+	MyComplex c3 = c1.addNew(c2);
+	cout << "c3 = (" << c3.getReal() << ", " << c3.getImg() << ")" << endl;
+
+	MyComplex c4 = c1.addInto(c2);
+	cout << "c4 = (" << c4.getReal() << ", " << c4.getImg() << ")" << endl;
+
+}
