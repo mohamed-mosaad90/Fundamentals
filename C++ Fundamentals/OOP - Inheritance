@@ -27,7 +27,7 @@ public:
 		color = c;
 	}
 	double getArea() {
-		return radius;
+		return 3.14*radius*radius;
 	}
 
 };
@@ -55,7 +55,7 @@ public:
 		 height=h;
 	}
 	double getVolume() {
-		return 3.14 * (radius *2) * height;
+		return getArea() * height;
 	}
 
 };
