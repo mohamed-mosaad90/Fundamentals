@@ -66,7 +66,125 @@ int main() {
 }
 
 //2-
+class MyPoint {
+private:
+	int x;
+	int y;
+public:
+	MyPoint() {
+		this->x = 0;
+		this->y = 0;
+	}
+	MyPoint(int x, int y) {
+		this->x = x;
+		this->y = y;
+	}
+	int getX() {
+		return this->x;
+	}
+	int getY() {
+		return this->y;
+	}
+	void setX(int x) {
+		this->x = x;
+	}
+	void setY(int y) {
+		this->y = y;
+	}
 
+};
+class MyLine {
+private:
+	MyPoint start;
+	MyPoint end;
+public :
+	MyLine() {
+		
+
+	}
+	MyLine(int x1,int x2,int y1,int y2) {
+		this->start = { x1,x2 };
+		this->end = { y1,y2 };
+
+	}
+	MyLine(MyPoint p1,MyPoint p2) {
+		this->start = p1;
+		this->end = p2;
+
+	}
+	//getter
+	MyPoint getStart() {
+		return this->start;
+	}
+	MyPoint getEnd() {
+		return this->end;
+	}
+	int getStartX() {
+		return this->start.getX();
+	}
+	int getStartY() {
+		return this->start.getY();
+	}
+	int getEndX() {
+		return this->end.getX();
+	}
+	int getEndY() {
+		return this->end.getY();
+	}
+	int* StartXY() {
+		int arr[2] = {this->getStartX(),this->getStartY()};
+		return arr;
+	}
+	int* endXY() {
+		int arr[2] = {this->getEndX(),this->getEndY()};
+		return arr;
+	}
+	//setter
+	void setStart(MyPoint start) {
+		this->start = start;
+	}
+	void setEnd(MyPoint end) {
+		this->end = end;
+	}
+
+	void setStartX(int x) {
+		this->start.setX(x);
+	}
+	void setStartY(int y) {
+		this->start.setY(y);
+	}
+	void setEndX(int x) {
+		this->end.setX(x);
+	}
+	void setEndY(int y) {
+		this->end.setY(y);
+	}
+	void setStartXY(int x,int y) {
+		this->start.setX(x);
+		this->start.setY(y);
+	}
+	void setEndXY(int x,int y) {
+		this->end.setX(x);
+		this->end.setY(y);
+	}
+	//methods                                 4            25
+	//distance between the two points d=√((x2 – x1)² + (y2 – y1)²). 
+	double getLenght() {
+		double pow1 = pow((double)this->end.getX() - (double)this->start.getX(), 2);
+		double pow2 = pow((double)this->end.getY() - (double)this->start.getY(), 2);
+		double len = sqrt(pow1 + pow2);
+		return len;
+	}
+	//4
+};
+int main() {
+	MyPoint m(1,1);
+	MyPoint k(10,5);
+	MyLine l(k, m);
+	cout<<l.getLenght();
+	
+}
+//3
 class MyComplex {
 private:
 	double real;
@@ -153,5 +271,95 @@ int main() {
 
 	MyComplex c4 = c1.addInto(c2);
 	cout << "c4 = (" << c4.getReal() << ", " << c4.getImg() << ")" << endl;
+
+}
+//4-
+class Point {
+protected:
+	float x;
+	float y;
+public:
+	Point() {
+		this->x = 0.0;
+		this->y = 0.0;
+	}
+	Point(float x, float y) {
+		this->x = x;
+		this->y = y;
+	}
+	//getter
+	float getX() {
+		return this->x;
+	}
+	float getY() {
+		return this->y;
+	}
+	float* getXY() {
+		float arr[2] = { this->getX(),this->getY() };
+		return arr;
+	}
+	//setter 
+	void setX(float x) {
+		this->x = x;
+	}
+	void setY(float y) {
+		this->y = y;
+	}
+	void setXY(float x, float y) {
+		this->x = x;
+		this->y = y;
+	}
+
+};
+class MovablePoint :public Point {
+private:
+	float speedX;
+	float speedY;
+public:
+	MovablePoint() {
+		this->speedX = 0, 0;
+		this->speedY = 0, 0;
+	}
+	MovablePoint(float x, float y) {
+		this->speedX = x;
+		this->speedY = y;
+	}
+	MovablePoint(float x, float y, float speedX, float speedY) :Point(x, y) {
+		this->speedX = x;
+		this->speedY = y;
+	}
+	// getter
+	float getspeedX() {
+		return this->speedX;
+	}
+	float getspeedY() {
+		return this->speedY;
+	}
+	float *getSpeed() {
+		float arr[2] = {this->getspeedX(),this->getspeedY()};
+		return arr;
+     }
+	//setter
+	void setSpeedX(float x) {
+		this->speedX = x;
+	}
+	void setSpeedY(float y) {
+		this->speedY = y;
+	}
+	void setSpeedXY(float x, float y) {
+		this->speedX = x;
+		this->speedY = y;
+}
+	//method
+	MovablePoint move() {
+		setX(getX() + speedX);
+		setY(getY() + speedY);
+		return *this;
+	}
+};
+int main() {
+	MovablePoint p(1, 2, 3, 4);
+	float arr[2] = { p.getSpeed()[0],p.getSpeed()[1]};
+	cout << arr[0] << "  " << arr[1] << endl;
 
 }
