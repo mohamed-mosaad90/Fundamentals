@@ -1,0 +1,178 @@
+//1-
+class Animal {
+protected:
+	string name;
+public:
+	Animal(string name) {
+		this->name=name;
+	}
+	virtual void greets() = 0;
+};
+class Cat :public Animal {
+
+public:
+	Cat(string name):Animal (name) {
+
+	}
+	void greets() {
+		cout << "Meow";
+	}
+};
+class Dog :Animal{
+public:
+	Dog(string name):Animal(name)
+	{}
+	void greets() {
+		cout << "Woof";
+	}
+	void greets(Dog anther) {
+		cout << "Woooof";
+	}
+
+};
+class BigDog :Dog{
+public:
+	BigDog(string name):Dog(name)
+	{}
+	 void greets() {
+		cout << "Wooow";
+	}
+	void greets(Dog anther) {
+		cout << "Wooooow";
+	}
+	void greets(BigDog anther) {
+		cout << "Woooooooooooow";
+	}
+
+};
+int main() {
+	Cat c("s");
+	 c.greets();
+	Dog d("mm");
+	d.greets(d);
+}
+//2-
+class Vehivcle {
+protected:
+
+	string model, Rnum;
+	int vSpeed;
+	double Fcapacity, Fconsumption;
+public:
+
+	Vehivcle() {
+		vSpeed = 0;
+		Fcapacity = 0;
+		Fconsumption =0;
+	}
+	Vehivcle(string model ,string Rnum,int vSpeed,double Fcapacity,double Fconsumption) {
+		this->model = model;
+		this->Rnum = Rnum;
+		this->vSpeed = vSpeed;
+		this->Fcapacity = Fcapacity;
+		this->Fconsumption =Fconsumption;
+	}
+	//setter
+	void setModel(string model) {
+		this->model = model;
+	}
+	void setRnum(string Rnum) {
+		this->Rnum = Rnum;
+	}
+	void setVSpeed(int vSpeed) {
+		this->vSpeed = vSpeed;
+	}
+	void setFcapacity(double Fcapacity) {
+		this->Fcapacity = Fcapacity;
+	}
+	void setFconsumption(double Fconsumption) {
+		this->Fconsumption = Fconsumption;
+	}
+	//getter
+	string getModel( ) {
+	return	this->model ;
+	}
+	string getRnum() {
+		return this->Rnum ;
+	}
+	int  getVSpeed() {
+		return this->vSpeed ;
+	}
+	double getFcapacity() {
+		return this->Fcapacity ;
+	}
+	double getFconsumption() {
+		return this->Fconsumption;
+	}
+	 //method
+	virtual void display() = 0;
+};
+
+class Truk :public Vehivcle{
+private:
+	double weight;
+public:
+	Truk() {
+		weight = 0;
+	}
+	Truk(string model, string Rnum, int vSpeed, double Fcapacity, double Fconsumption,double weight):Vehivcle( model,  Rnum,  vSpeed,  Fcapacity,  Fconsumption) {
+		this->weight=weight;
+	}
+	//getter
+	double getWeight() {
+		return this->weight;
+	}
+	//setter
+	void setWeight(double weight) {
+		 this->weight= weight;
+	}
+	//method
+	void display() {
+		cout << this->getModel() << endl;
+		cout << this->getFcapacity() << endl;
+		cout << this->getFconsumption() << endl;
+		cout << this->getRnum() << endl;
+		cout << this->getVSpeed() << endl;
+		cout << this->getWeight() << endl;
+		cout << "==================\n";
+	}
+};
+class Bus :public Vehivcle{
+private:
+	int  passengers;
+public:
+	Bus() {
+		passengers = 0;
+	}
+	Bus(int passengers,string model, string Rnum, int vSpeed, double Fcapacity, double Fconsumption,double weight):Vehivcle( model,  Rnum,  vSpeed,  Fcapacity,  Fconsumption) {
+		this->passengers = passengers;
+	}
+	//getter
+	double getPassengers() {
+		return this->passengers;
+	}
+	//setter
+	int  setPassengers(int  passengers) {
+		 this->passengers = passengers;
+	}
+	//method
+	void display() {
+		cout << this->getModel() << endl;
+		cout << this->getFcapacity() << endl;
+		cout << this->getFconsumption() << endl;
+		cout << this->getRnum() << endl;
+		cout << this->getVSpeed() << endl;
+		cout << this->getPassengers()<<endl;
+		cout << "==================\n";
+	}
+};
+int main() {
+	//pointer *
+	Vehivcle *t;
+	t = new Truk( "mircides", "1002", 44, 22, 33, 90);
+	 t->display() ;
+	 delete t;
+	 t = new Bus(10, "firariy", "1002",44,22,33,90);
+	 t->display() ;
+	 delete t;
+}
