@@ -176,3 +176,139 @@ int main() {
 	 t->display() ;
 	 delete t;
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Task 1:
+Create function take 2 params of any type then return the max (Template).
+template <class t>
+t fun(t x,t y) {
+	if (x>y) {
+		return x;
+	}
+	else {
+		return y;
+	}
+}
+
+int main() { 
+	int x, y;
+	cin >> x >> y;
+	cout<<fun(x, y);
+}
+
+Task 2:
+Create function take 2 params of any type then swap them and pass data by
+parameters (Template).
+
+template <class t>
+void  fun(t &x ,t &y) {
+	int a = x;
+	x = y;
+	y = a;
+	cout << "inside " << x <<" " << y << endl;
+}
+
+int main() { 
+	int x,y;
+	cin >> x >> y;
+	fun<int >(x, y);
+	cout << "outside " << x<<" " << y;
+	}
+
+Task 3:
+Create Calculator class contains 2 data members with the same template data
+type and contains 4 static methods add(), subtract(), multiply() and divide().
+
+template <class t1>
+class Cal {
+private:
+	static t1 num,num2;
+
+public:
+
+	//setter
+	static void setNum(t1 num) {
+		num = num;
+
+	}
+static	void setNum2(t1 num) {
+		num2 = num;
+
+	}
+	//getter
+ 	t1 getNum() {
+		return this->num;
+	}
+	t1 getNum2() {
+		return this->num2;
+	}
+	//methods
+	static t1 add(t1 num,t1 num2) {
+		return num + num2;
+	}
+	static t1 sub(t1 num,t1 num2) {
+		return num - num2;
+	}
+	static t1 mul(t1 num ,t1 num2) {
+		return num * num2;
+	}
+	static t1 div(t1 num ,t1 num2) {
+		return num / num2;
+	}
+};
+
+
+
+int main(){
+
+cout <<"add = " << Cal <int>::add(10,10) << endl;
+	cout <<"add = " << Cal <int>::sub(10, 10) << endl;
+	cout <<"add = " << Cal <int>::mul(10, 10) << endl;
+	cout <<"add = " << Cal <int>::div(10, 10) << endl;
+	int s;
+	cin >> s;
+
+}
+Task 4:
+Create divide function which take (int x, int y) and return y/x
+Then solve the case of (y=0) by throw your defined exception,
+And also solve the case of (y<0) by throw another defined exception.
+
+class exception1 :public exception {
+public:
+	const char* what() const throw() {
+		return"invalid divide by 0";
+	}
+};
+class exception2 :public exception {
+public:
+	const char* what() const throw() {
+		return"invalid divide by less than 0";
+	}
+};
+
+
+int fun(int x,int y) {
+	if (y==0) {
+		throw exception1();
+	}
+	else if (y<0) {
+		throw exception2();
+	}
+	else {
+		return x / y;
+	}
+}
+
+int main(){
+	int x, y;
+	cin >> x >> y;
+	try
+	{
+		cout << fun(x, y);
+	}
+	catch (exception& e)
+	{
+		cout<< "error "<<e.what();
+	}
+
+}
