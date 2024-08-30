@@ -1,0 +1,74 @@
+//1-
+class Ball {
+private:
+	float x, y, xDelta, yDelta;
+	int radius;
+public:
+	Ball() {
+		x = y = xDelta = yDelta =  0;
+		radius = 0;
+	}
+	Ball(float x,float y,int r,float xD,float yD) {
+		//scope operator
+		Ball::radius = r;
+		Ball::x = x;
+		Ball::y = y;
+		Ball::xDelta = xD;
+		Ball::yDelta = yD;
+	}
+	//getter 
+	int getRaduis() {
+		return radius;
+	}
+	float getX() {
+		return Ball::x;
+	}
+	float getY() {
+		return Ball::y;
+	}
+	float getYdelta() {
+		return Ball::yDelta;
+	}
+	float getXdelta() {
+		return Ball::xDelta;
+	}
+	//setter
+	void setRaduis(int r) {
+		Ball::radius = r;
+	}
+	void setX(float  x) {
+		Ball::x = x;
+	}
+	void setY(float  y) {
+		Ball::y = y;
+	}
+	void setXdelta(float  xD) {
+		Ball::xDelta = xD;
+	}
+	void setYdelta(float  yD) {
+		Ball::yDelta =yD;
+	}
+	//methods
+	void move(float x ,float y) {
+		Ball::x+=Ball::getXdelta();
+		Ball::y+=Ball::getYdelta();
+	}
+	void refltH() {
+		Ball::setXdelta(Ball::getXdelta()*-1);
+	}
+	void refltV() {
+		Ball::setYdelta(Ball::getYdelta()*-1);
+	}
+	string toString() {
+		string res = "Ball[(" + to_string(Ball::getX()) + ',' + to_string(Ball::getY()) + ',' + "speed = (" + to_string(getXdelta()) + ',' + to_string(getYdelta()) + ")]";
+
+		return res;
+	}
+
+};
+int main(){
+	Ball b(2.5 ,4.5, 5, 1, 2);
+	cout << b.toString()<<"\n =============\n";
+	b.move(b.getX(),b.getY());
+	cout << b.toString();
+}
